@@ -42,7 +42,6 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-    // 📞 Optional call simulation
     private fun callDonor() {
         val intent = Intent(Intent.ACTION_DIAL)
         intent.data = Uri.parse("tel:1234567890")

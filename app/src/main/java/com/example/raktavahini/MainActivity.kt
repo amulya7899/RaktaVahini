@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val save = findViewById<Button>(R.id.saveBtn)
         val goSearch = findViewById<Button>(R.id.goSearch)
 
-        // 📅 Date picker
+
         dateField.setOnClickListener {
             val calendar = Calendar.getInstance()
 
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        // 💾 Save button
+
         save.setOnClickListener {
 
             if (name.text.isEmpty() || blood.text.isEmpty() || location.text.isEmpty()) {
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
             showThankYouNotification(this)
 
-            // Clear fields
+
             name.text.clear()
             blood.text.clear()
             location.text.clear()
@@ -99,13 +99,13 @@ class MainActivity : AppCompatActivity() {
             selectedMillis = 0L
         }
 
-        // 🔍 Go to search screen
+
         goSearch.setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
     }
 
-    // 🔔 Notification
+
     private fun showThankYouNotification(activity: MainActivity) {
 
         val channelId = "donor_channel"
@@ -115,16 +115,16 @@ class MainActivity : AppCompatActivity() {
             val channel = NotificationChannel(
                 channelId,
                 "Donor Notifications",
-                NotificationManager.IMPORTANCE_HIGH   // 🔥 IMPORTANT
+                NotificationManager.IMPORTANCE_HIGH
             )
             manager.createNotificationChannel(channel)
         }
 
         val notification = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(android.R.drawable.ic_dialog_info) // must exist
+            .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("Thank You ❤️")
             .setContentText("You successfully registered as a donor!")
-            .setPriority(NotificationCompat.PRIORITY_HIGH)   // 🔥 IMPORTANT
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .build()
 
