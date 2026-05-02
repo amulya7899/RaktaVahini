@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RaktaVahini</string>
+    <string name="hint_name">Enter Name</string>
+    <string name="hint_blood_group">Blood Group (A+, O-, etc)</string>
+    <string name="hint_location">Location</string>
+    <string name="hint_last_donation">Last Donation Date (in millis)</string>
+    <string name="label_available">I am available to donate</string>
+    <string name="btn_save_donor">Save Donor</string>
+    <string name="btn_go_search">Go to Search</string>
+    <string name="hint_enter_blood_group">Enter Blood Group</string>
+    <string name="btn_search_donors">Search Donors</string>
+    <string name="no_donors_found">No donors found</string>
+    <string name="enter_blood_group">Enter blood group</string>
+</resources>
