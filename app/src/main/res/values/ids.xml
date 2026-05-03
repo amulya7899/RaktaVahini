@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameText" type="id" />
+    <item name="locationText" type="id" />
+    <item name="callBtn" type="id" />
+    <item name="donateBtnItem" type="id" />
+</resources>

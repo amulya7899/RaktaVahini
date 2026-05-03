@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -12,56 +11,66 @@
 
         <EditText
             android:id="@+id/name"
-            android:autofillHints="name"
-            android:hint="@string/hint_name"
+            android:autofillHints=""
+            android:hint="@string/enter_name"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/blood"
-            android:autofillHints="none"
-            android:hint="@string/hint_blood_group"
-            android:inputType="text"
-            android:minHeight="48dp"
+            android:autofillHints=""
+            android:hint="@string/blood_group_a_o"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="" />
 
         <EditText
             android:id="@+id/location"
-            android:autofillHints="postalAddress"
-            android:hint="@string/hint_location"
-            android:inputType="textPostalAddress"
-            android:minHeight="48dp"
+            android:autofillHints=""
+            android:hint="Location"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="" />
 
         <EditText
             android:id="@+id/lastDonationDate"
             android:hint="Select last donation date"
             android:focusable="false"
             android:clickable="true"
-            android:minHeight="48dp"
+            android:layout_marginTop="10dp"
             android:padding="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
+        <EditText
+            android:id="@+id/phone"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Switch
             android:id="@+id/available"
-            android:text="@string/label_available"
+            android:text="I am available to donate"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/saveBtn"
-            android:text="@string/btn_save_donor"
+            android:text="Save Donor"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/goSearch"
-            android:text="@string/btn_go_search"
+            android:text="Go to Search"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
