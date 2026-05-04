@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
-import com.google.android.material.switchmaterial.SwitchMaterial
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,17 +23,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-            requestPermissions(
-                arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
-                1
-            )
-        }
+
         val name = findViewById<EditText>(R.id.name)
+        val phone = findViewById<EditText>(R.id.phone)
         val blood = findViewById<EditText>(R.id.blood)
         val location = findViewById<EditText>(R.id.location)
         val dateField = findViewById<EditText>(R.id.lastDonationDate)
-        val available = findViewById<SwitchMaterial>(R.id.available)
+        val available = findViewById<Switch>(R.id.available)
 
         val save = findViewById<Button>(R.id.saveBtn)
         val goSearch = findViewById<Button>(R.id.goSearch)
@@ -48,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                 { _, year, month, day ->
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, month, day)
-
                     selectedMillis = selectedDate.timeInMillis
 
                     val format = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
@@ -66,48 +60,55 @@ class MainActivity : AppCompatActivity() {
 
         save.setOnClickListener {
 
-            if (name.text.isEmpty() || blood.text.isEmpty() || location.text.isEmpty()) {
+            if (name.text.isEmpty() || blood.text.isEmpty() ||
+                location.text.isEmpty() || phone.text.isEmpty()
+            ) {
                 Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (selectedMillis == 0L) {
-                Toast.makeText(this, "Select date", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Select donation date", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+
+            val lat = 12.9716
+            val lng = 77.5946
+
             val user = User(
-                name.text.toString(),
-                blood.text.toString(),
-                location.text.toString(),
+                name.text.toString().trim(),
+                blood.text.toString().trim().uppercase(),
+                location.text.toString().trim(),
                 selectedMillis,
-                available.isChecked
+                available.isChecked,
+                phone.text.toString().trim(),
+                lat,
+                lng
             )
 
             users.add(user)
 
-            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Thank you ❤️", Toast.LENGTH_LONG).show()
 
-            showThankYouNotification(this)
+            showNotification()
 
 
             name.text.clear()
             blood.text.clear()
             location.text.clear()
+            phone.text.clear()
             dateField.text.clear()
             available.isChecked = false
             selectedMillis = 0L
         }
-
 
         goSearch.setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
     }
 
-
-    private fun showThankYouNotification(activity: MainActivity) {
-
+    private fun showNotification() {
         val channelId = "donor_channel"
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -123,8 +124,7 @@ class MainActivity : AppCompatActivity() {
         val notification = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentTitle("Thank You ❤️")
-            .setContentText("You successfully registered as a donor!")
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentText("You registered as a donor!")
             .setAutoCancel(true)
             .build()
 

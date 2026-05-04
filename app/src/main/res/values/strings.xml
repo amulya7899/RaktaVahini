@@ -1,17 +1,25 @@
 <resources>
-    <string name="app_name">RaktaVahini</string>
+
+
+    <string name="app_name">Rakta Vahini</string>
+    <string name="title_home">🩸 Rakta Vahini</string>
+    <string name="subtitle_home">Register as a blood donor</string>
+    <string name="title_search">🔍 Emergency Search</string>
     <string name="hint_name">Enter Name</string>
-    <string name="hint_blood_group">Blood Group (A+, O-, etc)</string>
+    <string name="hint_blood_group">Blood Group (A+, O-)</string>
     <string name="hint_location">Location</string>
-    <string name="hint_last_donation">Last Donation Date (in millis)</string>
-    <string name="label_available">I am available to donate</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="hint_last_donation">Select Last Donation Date</string>
+    <string name="label_available">Available to Donate</string>
     <string name="btn_save_donor">Save Donor</string>
-    <string name="btn_go_search">Go to Search</string>
-    <string name="hint_enter_blood_group">Enter Blood Group</string>
+    <string name="btn_go_search">Find Blood Donors</string>
     <string name="btn_search_donors">Search Donors</string>
-    <string name="no_donors_found">No donors found</string>
-    <string name="enter_blood_group">Enter blood group</string>
-    <string name="call_donor">Call Donor</string>
-    <string name="enter_name">Enter Name</string>
-    <string name="blood_group_a_o">Blood Group (A+, O-)</string>
+    <string name="btn_call">Call</string>
+    <string name="btn_donated">Donated</string>
+    <string name="msg_fill_all">Please fill all fields</string>
+    <string name="msg_select_date">Please select donation date</string>
+    <string name="msg_saved">Donor saved successfully</string>
+    <string name="msg_no_donors">No eligible donors found</string>
+    <string name="msg_enter_group">Enter blood group</string>
+
 </resources>

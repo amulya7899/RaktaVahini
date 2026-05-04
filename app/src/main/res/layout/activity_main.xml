@@ -1,5 +1,5 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,71 +9,86 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:text="🩸 Rakta Vahini"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/red_primary"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Register as a blood donor"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/name"
-            android:autofillHints=""
-            android:hint="@string/enter_name"
-            android:inputType="textPersonName"
+            android:hint="Name"
+            android:backgroundTint="@color/red_primary"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/blood"
-            android:autofillHints=""
-            android:hint="@string/blood_group_a_o"
-            android:layout_marginTop="10dp"
+            android:hint="Blood Group (A+, O-)"
+            android:backgroundTint="@color/red_primary"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="" />
+            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/location"
-            android:autofillHints=""
             android:hint="Location"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="" />
-
-        <EditText
-            android:id="@+id/lastDonationDate"
-            android:hint="Select last donation date"
-            android:focusable="false"
-            android:clickable="true"
-            android:layout_marginTop="10dp"
-            android:padding="12dp"
+            android:backgroundTint="@color/red_primary"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/phone"
             android:hint="Phone Number"
-            android:inputType="phone"
-            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/red_primary"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/lastDonationDate"
+            android:hint="Select last donation date"
+            android:focusable="false"
+            android:backgroundTint="@color/red_primary"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Switch
             android:id="@+id/available"
-            android:text="I am available to donate"
-            android:layout_marginTop="10dp"
+            android:text="Available to Donate"
+            android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/saveBtn"
             android:text="Save Donor"
-            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/red_primary"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/goSearch"
-            android:text="Go to Search"
-            android:layout_marginTop="10dp"
+            android:text="Find Blood Donors"
+            android:backgroundTint="@color/red_dark"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
 </ScrollView>
